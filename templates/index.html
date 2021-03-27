@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Rock, Paper, Scissors: {{title}}</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+    
     <section>
-        <h1><span class="rock">Rock </span><span class="paper">Paper </span><span class="scissors">Scissors</span></h1>
-        <br>
         <h3>Playing Instructions</h3>
         <p>In <span class="rock">Rock </span> <span class="paper">Paper </span><span class="scissors">Scissors</span>, two players will each 
             randomly choose one of three objects: rock, paper, 
@@ -28,15 +19,15 @@
         <form action="/play" method="post">
             <ul>
                 <li>
-                    <label for="player_1" id=player-1>Player 1</label>
-                    <input type="text" class="player-names" name="player_1" maxlength="12" autocomplete="off">
+                    <label for="player_1" class=player-1>Player 1</label>
+                    <input type="text" class="player-form" id="name-form" name="player_1" maxlength="12" autocomplete="off">
                 </li>
                 <li>
-                    <label for="player_2" id=player-2>Player 2</label>
-                    <input type="text" class="player-names" name="player_2" maxlength="12" autocomplete="off"> 
+                    <label for="player_2" class=player-2>Player 2</label>
+                    <input type="text" class="player-form" id="name-form" name="player_2" maxlength="12" autocomplete="off"> 
                 </li>
                     <input type="submit" value="Play Game">   
         </form>
     </section>
-</body>
-</html>
+
+{% endblock %} 

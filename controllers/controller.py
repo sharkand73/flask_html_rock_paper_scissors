@@ -3,33 +3,37 @@ from flask import request, render_template, redirect
 from models.rock_paper_scissors import *
 from models.player import Player
 from models.game_round import GameRound
+from models.functions import *
 
 @server.route('/')
 def index():
     return render_template('index.html', title="home")
 
-@server.route('/<choice_1>/<choice_2>')
-def outcome(choice_1, choice_2):
-    player_1 = Player("Andy")
-    player_1.assign_choice(choice_1)
-    player_2 = Player("Evelyn")
-    player_2.assign_choice(choice_2)
-    current_round = GameRound(player_1, player_2)
-    if current_round.winner():
-        return (f'{current_round.winner().name} wins with {current_round.winner().choice}!')
-    else:
-        return (f'You both chose {current_round.player_1.choice}.  It is a draw!')
-
 @server.route('/play', methods=['post'])
-def start():
+def play():
     name_1 = request.form["player_1"]
     name_2 = request.form["player_2"]
-    if name_1 == "":
-        name_1 = "Player1"
-    if name_2 == "":
-        name_2 = "Player2"
-    if name_1 == name_2:
+    if check_names(name_1, name_2) == None:
         return redirect('/')
-    player_1 = Player(name_1)
-    player_2 = Player(name_2)
-    return render_template('play.html', title = "play", player_1=player_1, player_2=player_2)
+    player_1 = Player(check_names(name_1, name_2)[0])
+    player_2 = Player(check_names(name_1, name_2)[1])
+    global current_round 
+    current_round = GameRound(player_1, player_2)
+    return render_template('play.html', title = "play", current_round=current_round)
+
+@server.route('/route', methods=['post'])
+def route():
+    choice_1 = request.form["choice_1"]
+    choice_2 = request.form["choice_2"]
+    return redirect(f'/{choice_1}/{choice_2}')
+
+@server.route('/<choice_1>/<choice_2>')
+def outcome(choice_1, choice_2):
+    current_round.player_1.assign_choice(choice_1)
+    current_round.player_2.assign_choice(choice_2)
+    winner = current_round.winner()
+    loser = None
+    if winner != None:
+        loser = current_round.loser()
+    return render_template('result.html', winner = winner, loser = loser, title = "Result")
+   

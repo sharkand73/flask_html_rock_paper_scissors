@@ -2,17 +2,31 @@ body {
     background-color: black;
     color: white;
     font-family: 'Press Start 2P', cursive;
-    margin: 0
+    margin: 0;
 }
 
 
 body > section {
     width: 70%;
-    margin: 20px 100px 0 100px;   
+    float: center;   
 } 
 
 .rock {
     color: limegreen;
+}
+
+button {
+    float: center;
+    width: 150;
+    height: 150;
+    background-color: dodgerblue;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 26px;
+    padding: 10px;
+    border-style: ridge;
+    border-color: blue;
+    border-width: 7px;
 }
 
 .paper {
@@ -23,7 +37,7 @@ body > section {
     color: magenta
 }
 
-h1, h3 {
+h1, h2, h3 {
     text-align: center
 }
 
@@ -34,20 +48,57 @@ li {
 form > ul {
     list-style: none;
 }
-#player-1 {
+.player-1 {
     color: red;
+    background-color: black;
 }
 
-#player-2 {
+.player-2 {
     color: blue;
+    background-color: black;
 }
 
-.player-names {
+.player-form {
     height: 30px;
     background-color: black;
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     border: 1px solid slategray;
-    width: 180px;  
+    width: 180px; 
 }
+
+#name-form {
+    text-transform: uppercase; 
+}
+
+body > section {
+    width: 80%;
+    float: center;
+}
+
+#game-play {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: slategrey;
+}
+
+.player-form {
+    width: 130px;
+}
+
+#choice-1 {
+    align-self: flex-start;
+}
+
+#choice-2 {
+    align-self: flex-end;
+}
+
+#Go {
+    align-self: center;
+} 
+

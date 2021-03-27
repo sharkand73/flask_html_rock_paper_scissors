@@ -1,15 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors: {{title}}</title>
-</head>
-<body>
-    <h1>Rock, Paper, Scissors</h1>
+{% extends "base.html" %}
 
-    <h2>Welcome, {{player_1.name}} and {{player_2.name}}!</h2>
-    
-</body>
-</html>
+{% block content %}
+
+
+    <h3>
+        Welcome, <span class="player-1">{{current_round.player_1.name}}</span> and <span class="player-2">{{current_round.player_2.name}}</span>!
+    </h3>   
+    <h3>
+        Make your choices below:
+    </h3>
+    <section>
+        <form action="/route" id="game-play" method="post">
+            <div id="choice-1">
+                <label for="choice-1" class=player-1>{{current_round.player_1.name}}</label><br>
+                <select class="player-form" name="choice_1">
+                    <option value="rock">rock</option>
+                    <option value="paper">paper</option>
+                    <option value="scissors">scissors</option>
+                </select>
+            </div>
+
+            <div id="Go">
+                <input type="submit" id="submit-choices" value="GO!">
+            </div>
+            
+            <div id="choice-2">
+                <label for="choice-2" class=player-2>{{current_round.player_2.name}}</label><br>
+                <select class="player-form" name="choice_2">
+                    <option value="rock">rock</option>
+                    <option value="paper">paper</option>
+                    <option value="scissors">scissors</option>
+                </select>
+            </div>
+
+        </form>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "/base.html" %}
+
+{% block content %}
+
+    <p></p>
+
+    <section>
+        {% if winner == None %}
+        <p class = "result">
+            You chose the same thing - <br><br>
+            it's a draw!
+        </p>
+        {% endif %}
+
+        {% if winner %} 
+        <p>
+            {{winner.choice}} defeats {{loser.choice}} - {{winner.name}} wins!
+        </p>
+        {% endif %}
+        
+        <a href="/play"><button>PLAY<br> AGAIN</button></a>
+
+    
+
+{% endblock %}
+
