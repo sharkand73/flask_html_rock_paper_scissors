@@ -5,11 +5,19 @@ body {
     margin: 0;
 }
 
-
-body > section {
-    width: 70%;
-    float: center;   
+body > div {
+    display: flex;
+    justify-content: center;
+   
+}
+body > div > section {
+    width: 80%;
+      
 } 
+
+body > div > section > ul {
+    margin-bottom: 40px;
+}
 
 .rock {
     color: limegreen;
@@ -17,16 +25,49 @@ body > section {
 
 button {
     float: center;
-    width: 150;
-    height: 150;
-    background-color: dodgerblue;
+    width: 180px;
+    height: 100px;
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 26px;
     padding: 10px;
     border-style: ridge;
-    border-color: blue;
     border-width: 7px;
+}
+
+#play-again {
+    background-color: lightgreen;
+    border-color: green;
+}
+
+#play-again:hover {
+    background-color: green;
+}
+
+#finish-game {
+    background-color: orangered;
+    border-color: maroon;
+}
+
+#finish-game:hover {
+    background-color: maroon;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#play-game {
+    color: white;
+    background-color: lightgreen;
+    border-color: green;
+}
+
+#play-game:hover {
+    background-color: green;
 }
 
 .paper {
@@ -48,14 +89,17 @@ li {
 form > ul {
     list-style: none;
 }
+
+.player-1, .player-2 {
+    background-color: black;
+    padding: 6px;
+}
 .player-1 {
     color: red;
-    background-color: black;
 }
 
 .player-2 {
-    color: blue;
-    background-color: black;
+    color: blue;    
 }
 
 .player-form {
@@ -65,29 +109,26 @@ form > ul {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     border: 1px solid slategray;
-    width: 180px; 
+    width: 130px; 
 }
 
 #name-form {
     text-transform: uppercase; 
 }
 
-body > section {
-    width: 80%;
-    float: center;
+#game-container {
+    display: flex;
+    justify-content: center;
 }
 
 #game-play {
     height: 500px;
-    width: 100%;
+    width: 80%;
     display: flex;
+    float: center;
     justify-content: space-between;
     align-content: space-between;
     background-color: slategrey;
-}
-
-.player-form {
-    width: 130px;
 }
 
 #choice-1 {

@@ -6,20 +6,25 @@
 
     <section>
         {% if winner == None %}
-        <p class = "result">
-            You chose the same thing - <br><br>
+        <h3>
+            You chose the same thing - 
+        </h3>
+        <br>
+        <h3>
             it's a draw!
-        </p>
+        </32>
         {% endif %}
 
         {% if winner %} 
-        <p>
+        <h3>
             {{winner.choice}} defeats {{loser.choice}} - {{winner.name}} wins!
-        </p>
+        </h3>
         {% endif %}
         
-        <a href="/play"><button>PLAY<br> AGAIN</button></a>
-
+        <div class="button-container">
+            <a href="/play2"><button class='button' id='play-again'>Play Again</button></a>
+            <a href="/finish"><button class='button' id='finish-game'>Finish Game</button></a>
+        </div>
     
 
 {% endblock %}

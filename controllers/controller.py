@@ -37,3 +37,10 @@ def outcome(choice_1, choice_2):
         loser = current_round.loser()
     return render_template('result.html', winner = winner, loser = loser, title = "Result")
    
+@server.route('/play2')
+def play_2():
+    return render_template('play2.html', title = "play", current_round=current_round)
+
+@server.route('/finish')
+def finish():
+    return render_template('finish.html', title = "game over")

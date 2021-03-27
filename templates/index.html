@@ -1,33 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
-    <section>
-        <h3>Playing Instructions</h3>
-        <p>In <span class="rock">Rock </span> <span class="paper">Paper </span><span class="scissors">Scissors</span>, two players will each 
-            randomly choose one of three objects: rock, paper, 
-            or scissors, without the other player knowing their 
-            choice. When the choices are revealed, the winner is 
-            chosen according to the following scheme:
-        </p>
-        <ul>
-            <li><span class="scissors">Scissors </span>defeat <span class="paper">paper</span> by cutting it.</li>
-            <li><span class="rock">Rock </span>defeats <span class="scissors">scissors</span>, because scissors can't cut rock.</li>
-            <li><span class="paper">Paper </span>defeats <span class="rock">rock </span> by wrapping itself around it.</li>
-        </ul>
-        <p>Enter your names below to begin.  Good luck!</p>
-        <form action="/play" method="post">
+    <div>
+        <section>
+            <h3>Playing Instructions</h3>
+            <p>In <span class="rock">Rock </span> <span class="paper">Paper </span><span class="scissors">Scissors</span>, two players will each 
+                randomly choose one of three objects: rock, paper, 
+                or scissors, without the other player knowing their 
+                choice. When the choices are revealed, the winner is 
+                chosen according to the following scheme:
+            </p>
             <ul>
-                <li>
-                    <label for="player_1" class=player-1>Player 1</label>
-                    <input type="text" class="player-form" id="name-form" name="player_1" maxlength="12" autocomplete="off">
-                </li>
-                <li>
-                    <label for="player_2" class=player-2>Player 2</label>
-                    <input type="text" class="player-form" id="name-form" name="player_2" maxlength="12" autocomplete="off"> 
-                </li>
-                    <input type="submit" value="Play Game">   
-        </form>
-    </section>
-
+                <li><span class="scissors">Scissors </span>defeat <span class="paper">paper</span> by cutting it.</li>
+                <li><span class="rock">Rock </span>defeats <span class="scissors">scissors</span>, because scissors can't cut rock.</li>
+                <li><span class="paper">Paper </span>defeats <span class="rock">rock </span> by wrapping itself around it.</li>
+            </ul>
+            <p>Enter your names below to begin.  Good luck!</p>
+            <form action="/play" method="post">
+                <ul>
+                    <li>
+                        <label for="player_1" class=player-1>Player 1</label>
+                        <input type="text" class="player-form" id="name-form" name="player_1" maxlength="12" autocomplete="off">
+                    </li>
+                    <li>
+                        <label for="player_2" class=player-2>Player 2</label>
+                        <input type="text" class="player-form" id="name-form" name="player_2" maxlength="12" autocomplete="off"> 
+                    </li>
+                        <button type="submit" id="play-game">Play Game</button>   
+            </form>
+        </section>
+    </div>
 {% endblock %} 
