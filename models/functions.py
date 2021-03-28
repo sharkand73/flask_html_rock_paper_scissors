@@ -8,6 +8,11 @@ def check_names(name_1, name_2):
     else:
         return [name_1.upper(), name_2.upper()]
 
+def random_choice():
+    from random import choice
+    list = ["rock", "paper", "scissors"]
+    return(choice(list))
+
 # def result_string(result):
 #     if result == None:
 #         return("You chose the same thing!", "Draw!")

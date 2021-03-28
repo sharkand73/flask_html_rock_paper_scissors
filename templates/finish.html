@@ -6,8 +6,22 @@
 
     <section>
         <h1>GAME OVER</h1>
+        <div class="scoreboard">
+            <table>
+                <tr>
+                    <td class="cell">{{current_round.player_1.name}}</td><td>{{current_round.player_1.score}}</td>
+                </tr>
+                <tr>
+                    <td class="cell">{{current_round.player_2.name}}</td><td>{{current_round.player_2.score}}</td>
+                </tr>
+            </table>
+        </div>
+        
         {% if champion != None %}
         <h3><span>{{champion.name}}</span> is the champion!</section></h3>
+        <audio autoplay>
+            <source src="/static/abba.mp3" type="audio/mp3">
+        </audio>
         {% endif %}
 
         {% if champion == None %} 

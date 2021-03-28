@@ -34,22 +34,17 @@ def route():
     if current_round.mode == "2P":
         choice_2 = request.form["choice_2"]
     else:
-        choice_2 = None
+        choice_2 = random_choice()
     return redirect(f'/{choice_1}/{choice_2}')
 
 @server.route('/<choice_1>/<choice_2>')
 def outcome(choice_1, choice_2):
     current_round.player_1.assign_choice(choice_1)
-    if choice_2 != 'None': 
-        current_round.player_2.assign_choice(choice_2)
-    else: 
-        current_round.player_2.random_choice()
-
+    current_round.player_2.assign_choice(choice_2)
     winner = current_round.winner()
     loser = None
     if winner != None:
         loser = current_round.loser()
-
     current_round.update_score()
     return render_template('result.html', winner = winner, loser = loser, title = "Result")
    
@@ -60,4 +55,4 @@ def play_2():
 @server.route('/finish')
 def finish():
     champion = current_round.champion()
-    return render_template('finish.html', title = "game over", champion=champion)
+    return render_template('finish.html', title = "game over", current_round=current_round, champion=champion)
