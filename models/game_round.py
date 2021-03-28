@@ -6,11 +6,15 @@ class GameRound:
     def winner(self):
         options = ["rock", "paper", "scissors"]
         winners = [None, self.player_1, self.player_2]
-        rabbit = (options.index(self.player_1.choice) - options.index(self.player_2.choice)) % 3    # Pulls rabbit out
-        return winners[rabbit]   
+        rabbit = (options.index(self.player_1.choice) - options.index(self.player_2.choice)) % 3    # Pulls rabbit
+        return winners[rabbit]                                                                    # out of maths hat.
         
     def loser(self):
         players = [self.player_1, self.player_2]
         index = players.index(self.winner())
-        return players[(not index)]                                                                 # of maths hat.
+        return players[(not index)]                                                                 
+
+    def update_score(self):
+        if self.winner():
+            self.winner().score += 1
 

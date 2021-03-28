@@ -16,7 +16,7 @@
                 <li><span class="paper">Paper </span>defeats <span class="rock">rock </span> by wrapping itself around it.</li>
             </ul>
             <p>Enter your names below to begin.  Good luck!</p>
-            <form action="/play" method="post">
+            <form>
                 <ul>
                     <li>
                         <label for="player_1" class=player-1>Player 1</label>
@@ -26,8 +26,12 @@
                         <label for="player_2" class=player-2>Player 2</label>
                         <input type="text" class="player-form" id="name-form" name="player_2" maxlength="12" autocomplete="off"> 
                     </li>
-                        <button type="submit" id="play-game">Play Game</button>   
-            </form>
+                    </ul>
+                    <div class="button-container">
+                        <button type="submit" action="/play1P" method="post" id="mode-1P">1 Player</button>   
+                        <button type="submit" action="/play" method="post" id="mode-2P">2 Player</button>   
+                    </div>
+                </form>
         </section>
     </div>
 {% endblock %} 

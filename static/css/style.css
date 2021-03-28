@@ -57,17 +57,37 @@ button {
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
-#play-game {
+#mode-1P {
     color: white;
-    background-color: lightgreen;
-    border-color: green;
+    background-color: pink;
+    border-color: magenta
 }
 
-#play-game:hover {
-    background-color: green;
+#mode-1P:hover {
+    background-color: magenta;
+}
+
+#mode-2P {
+    color: white;
+    background-color: cyan;
+    border-color: royalblue;
+}
+
+#mode-2P:hover {
+    background-color: royalblue;
+}
+
+#submit-choices {
+    color: white;
+    background-color: mediumorchid;
+    border-color: purple;
+}
+
+#submit-choices:hover {
+    background-color: purple;
 }
 
 .paper {

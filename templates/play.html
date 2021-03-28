@@ -4,7 +4,10 @@
 
 
     <h3>
-        Welcome, <span class="player-1">{{current_round.player_1.name}}</span> and <span class="player-2">{{current_round.player_2.name}}</span>!
+        Welcome, <span class="player-1">{{current_round.player_1.name}}</span> 
+        {% if current_round.mode == "2P" %}
+        and <span class="player-2">{{current_round.player_2.name}}</span>
+        {% endif %}!
     </h3>   
     <h3>
         Make your choices below:
@@ -21,16 +24,18 @@
             </div>
 
             <div id="Go">
-                <input type="submit" class = "submit" id="submit-choices" value="GO!">
+                <button type="submit" class = "submit" id="submit-choices">GO!</button>
             </div>
             
             <div id="choice-2">
                 <label for="choice-2" class=player-2>{{current_round.player_2.name}}</label><br>
+                {% if current_round.mode == "2P" %}
                 <select class="player-form" name="choice_2">
                     <option value="rock">rock</option>
                     <option value="paper">paper</option>
                     <option value="scissors">scissors</option>
                 </select>
+                {% endif %}
             </div>
 
         </form>
