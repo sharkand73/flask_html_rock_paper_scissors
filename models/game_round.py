@@ -18,3 +18,10 @@ class GameRound:
         if self.winner():
             self.winner().score += 1
 
+    def champion(self):
+        if self.player_1.score > self.player_2.score:
+            return self.player_1
+        elif self.player_2.score > self.player_1.score:
+            return self.player_2
+        else: return None
+

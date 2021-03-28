@@ -25,11 +25,11 @@ body > div > section > ul {
 
 button {
     float: center;
-    width: 180px;
-    height: 100px;
+    width: 140px;
+    height: 80px;
     color: white;
     font-family: 'Press Start 2P', cursive;
-    font-size: 26px;
+    font-size: 20px;
     padding: 10px;
     border-style: ridge;
     border-width: 7px;
@@ -57,7 +57,7 @@ button {
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 #mode-1P {
@@ -163,3 +163,11 @@ form > ul {
     align-self: center;
 } 
 
+.scoreboard {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    width: 200px;
+}

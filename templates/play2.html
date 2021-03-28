@@ -2,13 +2,17 @@
 
 {% block content %}
 
-
-    <h3>
-        Player 1: {{current_round.player_1.score}}
-    </h3>   
-    <h3>
-        Player 2: {{current_round.player_2.score}}
-    </h3>
+    <div class="scoreboard">
+        <table>
+            <tr>
+                <td class="cell">{{current_round.player_1.name}}</td><td>{{current_round.player_1.score}}</td>
+            </tr>
+            <tr>
+                <td class="cell">{{current_round.player_2.name}}</td><td>{{current_round.player_2.score}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>
     <section id="game-container">
         <form action="/route" id="game-play" method="post">
             <div id="choice-1">

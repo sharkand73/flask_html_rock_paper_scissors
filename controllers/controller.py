@@ -11,8 +11,12 @@ def index():
 
 @server.route('/play', methods=['post'])
 def play():
+    mode = "2P"
     name_1 = request.form["player_1"]
     name_2 = request.form["player_2"]
+    if "play_1P" in request.form:
+        name_2 = "COMPUTER"
+        mode = "1P"
     if check_names(name_1, name_2) == None:
         return redirect('/')
     player_1 = Player(check_names(name_1, name_2)[0])
@@ -21,22 +25,7 @@ def play():
     player_2.color = "blue"
     global current_round 
     current_round = GameRound(player_1, player_2)
-    current_round.mode = "2P"
-    return render_template('play.html', title = "play", current_round=current_round)
-
-@server.route('/play1P', methods=['post'])
-def play_1P():
-    name_1 = request.form["player_1"]
-    name_2 = "COMPUTER"
-    if check_names(name_1, name_2) == None:
-        return redirect('/')
-    player_1 = Player(check_names(name_1, name_2)[0])
-    player_2 = Player(check_names(name_1, name_2)[1])
-    player_1.color = "red"
-    player_2.color = "blue"
-    global current_round 
-    current_round = GameRound(player_1, player_2)
-    current_round.mode = "1P"
+    current_round.mode = mode
     return render_template('play.html', title = "play", current_round=current_round)
 
 @server.route('/route', methods=['post'])
@@ -70,4 +59,5 @@ def play_2():
 
 @server.route('/finish')
 def finish():
-    return render_template('finish.html', title = "game over")
+    champion = current_round.champion()
+    return render_template('finish.html', title = "game over", champion=champion)

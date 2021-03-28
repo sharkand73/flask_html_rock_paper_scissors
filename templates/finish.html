@@ -6,7 +6,14 @@
 
     <section>
         <h1>GAME OVER</h1>
-        <h3>The winner is Evelyn!!!</section></h3>
+        {% if champion != None %}
+        <h3><span>{{champion.name}}</span> is the champion!</section></h3>
+        {% endif %}
+
+        {% if champion == None %} 
+        <h3>The tournament has ended in a draw.</h3>
+        {% endif %} 
+
     </section>
     <div class="button-container">
         <a href="/"><button class='button' id='play-again'>Start Over</button></a>
