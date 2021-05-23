@@ -36,13 +36,15 @@ A score is kept in the game and the users are free to stop the game when they li
 
 # The brief
 The brief was to create an app allows the user to play one round of Rock-Paper-Scissors, and that used server routes e.g. /ROCK/PAPER to determine the winner.  
-The extension was to make a one-player versiom of the game.  I also extended the app to keep a score tally over several rounds. 
+The extension was to make a one-player versiom of the game.  The app was also extended to keep a score tally over several rounds. 
 
 The tech stack is:
 * Python 
 * Django
 * HTML
 * CSS
+
+Garage Band along with the "Magical 8bit" plugin and a midi-keyboard were used to create the ABBA jingle at the end.
 
 # Planning
 A sketch of the game screen was drawn, and a map of the RESTful routes made.  I also invented a neat mathematical method for determining the winning choice which uses subtraction modulo 3.
