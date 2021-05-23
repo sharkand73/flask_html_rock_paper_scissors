@@ -10,7 +10,7 @@ It allowed me to get creative with the brief, and so I added retro styling (à l
 * Planning
 
 # Setup
-You will need to flask installed.
+You will need to have Flask installed.
 
 1. From the flask_html_rock_paper_scissors directory, type:
 
